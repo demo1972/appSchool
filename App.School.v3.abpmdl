@@ -1,0 +1,108 @@
+{
+  "template": "app",
+  "imports": {
+    "Volo.Abp.LeptonXLiteTheme": {
+      "version": "4.3.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.Account": {
+      "version": "9.3.4",
+      "isInstalled": true,
+      "creationTime": "09/28/2025 22:23:53 +00:00"
+    },
+    "Volo.Abp.OpenIddict": {
+      "version": "9.3.4",
+      "isInstalled": true,
+      "creationTime": "09/28/2025 22:23:53 +00:00"
+    },
+    "Volo.Abp.Identity": {
+      "version": "9.3.4",
+      "isInstalled": true,
+      "creationTime": "09/28/2025 22:23:53 +00:00"
+    },
+    "Volo.Abp.TenantManagement": {
+      "version": "9.3.4",
+      "isInstalled": true,
+      "creationTime": "09/28/2025 22:23:53 +00:00"
+    },
+    "Volo.Abp.SettingManagement": {
+      "version": "9.3.4",
+      "isInstalled": true,
+      "creationTime": "09/28/2025 22:23:53 +00:00"
+    },
+    "Volo.Abp.PermissionManagement": {
+      "version": "9.3.4",
+      "isInstalled": true,
+      "creationTime": "09/28/2025 22:23:53 +00:00"
+    },
+    "Volo.Abp.FeatureManagement": {
+      "version": "9.3.4",
+      "isInstalled": true,
+      "creationTime": "09/28/2025 22:23:53 +00:00"
+    }
+  },
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "App.School.v3.Application": {
+      "path": "src/App.School.v3.Application/App.School.v3.Application.abppkg",
+      "folder": "src"
+    },
+    "App.School.v3.Application.Tests": {
+      "path": "test/App.School.v3.Application.Tests/App.School.v3.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "App.School.v3.Domain.Shared": {
+      "path": "src/App.School.v3.Domain.Shared/App.School.v3.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "App.School.v3.Application.Contracts": {
+      "path": "src/App.School.v3.Application.Contracts/App.School.v3.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "App.School.v3.HttpApi": {
+      "path": "src/App.School.v3.HttpApi/App.School.v3.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "App.School.v3.HttpApi.Client": {
+      "path": "src/App.School.v3.HttpApi.Client/App.School.v3.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "App.School.v3.EntityFrameworkCore.Tests": {
+      "path": "test/App.School.v3.EntityFrameworkCore.Tests/App.School.v3.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "App.School.v3.EntityFrameworkCore": {
+      "path": "src/App.School.v3.EntityFrameworkCore/App.School.v3.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "App.School.v3.TestBase": {
+      "path": "test/App.School.v3.TestBase/App.School.v3.TestBase.abppkg",
+      "folder": "test"
+    },
+    "App.School.v3.Domain.Tests": {
+      "path": "test/App.School.v3.Domain.Tests/App.School.v3.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "App.School.v3.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/App.School.v3.HttpApi.Client.ConsoleTestApp/App.School.v3.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "App.School.v3.DbMigrator": {
+      "path": "src/App.School.v3.DbMigrator/App.School.v3.DbMigrator.abppkg",
+      "folder": "src"
+    },
+    "App.School.v3.HttpApi.Host": {
+      "path": "src/App.School.v3.HttpApi.Host/App.School.v3.HttpApi.Host.abppkg",
+      "folder": "src"
+    },
+    "App.School.v3.Domain": {
+      "path": "src/App.School.v3.Domain/App.School.v3.Domain.abppkg",
+      "folder": "src"
+    }
+  }
+}
