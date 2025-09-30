@@ -17,5 +17,22 @@ function configureRoutes() {
         order: 1,
         layout: eLayoutType.application,
       },
+       {    
+        path: '/catalog',
+        name: '::Menu:Catalog',
+        iconClass: 'fas fa-home',
+        order: 1,
+        layout: eLayoutType.application,
+      },
+       {    
+        path: '/catalog/insumos',
+        name: '::Menu:Catalog:Insumos',
+        parentName:'::Menu:Catalog',
+        iconClass: 'fas fa-home',
+        order: 1,
+        layout: eLayoutType.application,
+      },
+      
   ]);
+
 }

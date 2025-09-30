@@ -37,6 +37,9 @@
     "Unspecified": "Sistema",
     "SeeAllUsers": "Ver todos los usuarios",
     "TakePhoto": "Tomar foto",
-    "ChoosePhoto": "Escoge una foto"
+    "ChoosePhoto": "Escoge una foto",
+    "Menu:Catalog": "Catálogos",
+    "Menu:Catalog:Insumos": "Insumos"
+
   }
 }

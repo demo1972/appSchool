@@ -59,7 +59,7 @@ namespace App.School.v3.Migrations
 
                     b.HasIndex("IdState");
 
-                    b.ToTable("Citys");
+                    b.ToTable("Cities", (string)null);
                 });
 
             modelBuilder.Entity("App.School.v3.Entities.Country", b =>
@@ -92,7 +92,7 @@ namespace App.School.v3.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Countrys");
+                    b.ToTable("Countries");
                 });
 
             modelBuilder.Entity("App.School.v3.Entities.DocumentStudent", b =>

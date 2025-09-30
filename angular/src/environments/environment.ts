@@ -6,7 +6,6 @@ const oAuthConfig = {
   issuer: 'https://localhost:44368/',
   redirectUri: baseUrl,
   clientId: 'v3_App',
-  responseType: 'code',
   scope: 'offline_access v3',
   requireHttps: true,
 };

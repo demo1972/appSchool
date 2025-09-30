@@ -1,0 +1,60 @@
+<div class="card shadow">
+  <div class="card-body p-4">
+    <div class="d-flex justify-content-center mb-3">
+      <img src="./../../../assets/images/logo/academiz-logo.png" alt="Academix Logo">
+    </div>
+
+    <h3 class="text-center mb-4">Iniciar Sesión</h3>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+      <!-- Email -->
+      <div class="mb-3">
+        <label for="username" class="form-label">Correo electrónico</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="username" 
+          formControlName="username" 
+          placeholder="usuario@ejemplo.com" />
+
+        <div *ngIf="f['username'].touched && f['username'].invalid" class="text-danger small mt-1">
+          <div *ngIf="f['username'].errors?.['required']">El correo es obligatorio.</div>
+          <div *ngIf="f['username'].errors?.['email']">Formato de correo inválido.</div>
+        </div>
+      </div>
+
+      <!-- Password con toggle 👇 -->
+      <div class="mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <div class="input-group">
+          <input 
+            [type]="showPassword ? 'text' : 'password'" 
+            class="form-control" 
+            id="password" 
+            formControlName="password" 
+            placeholder="••••••••" />
+          <button type="button" class="btn btn-outline-secondary" (click)="togglePassword()">
+            {{ showPassword ? 'Ocultar' : 'Ver' }}
+          </button>
+        </div>
+
+        <div *ngIf="f['password'].touched && f['password'].invalid" class="text-danger small mt-1">
+          <div *ngIf="f['password'].errors?.['required']">La contraseña es obligatoria.</div>
+          <div *ngIf="f['password'].errors?.['minlength']">Mínimo 6 caracteres.</div>
+        </div>
+      </div>
+
+      <!-- Botón -->
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">
+          Entrar
+        </button>
+      </div>
+
+      <div class="mt-3 text-center">
+        <a href="#">¿Olvidaste tu contraseña?</a>
+      </div>
+    </form>
+  </div>
+</div>

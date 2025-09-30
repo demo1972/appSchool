@@ -6,7 +6,7 @@
   --lpx-theme-dim-bg: url('/assets/images/login/login-bg-img-dim.svg');
   --lpx-theme-dark-bg: url('/assets/images/login/login-bg-img-dark.svg');
 
-  --lpx-logo-url: var(--lpx-logo-icon, url('/assets/images/logo/icon.svg'));
+  --lpx-logo-url: var(--lpx-logo-icon, url('./assets/images/logo/icon.svg'));
   --lpx-logo: var(--lpx-logo-icon)!important;
 
   .abp-logo {
@@ -36,4 +36,12 @@
     height: 20px;
     background-image: url('/assets/images/getting-started/x.svg');
   }
+  body{
+    background-color: white !important;
+  }
+
+.lpx-topbar-container {
+  display: none !important;
+}
+
 }

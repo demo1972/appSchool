@@ -1,0 +1,22 @@
+.my-sidebar {
+  width: 280px;
+background-image: url('./../../../assets/images/login/login-bg-img-light.svg');
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+img{width: 70%;}
+.my-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.my-sidebar li a {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  color: rgb(26, 58, 199);
+  text-decoration: none;
+}
+.my-sidebar li a:hover {
+  background-color: #6aa4dd;
+}

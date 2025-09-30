@@ -13,8 +13,8 @@ using Volo.Abp.EntityFrameworkCore;
 namespace App.School.v3.Migrations
 {
     [DbContext(typeof(v3DbContext))]
-    [Migration("20250929173009_InitialTables")]
-    partial class InitialTables
+    [Migration("20250929182106_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -62,7 +62,7 @@ namespace App.School.v3.Migrations
 
                     b.HasIndex("IdState");
 
-                    b.ToTable("Citys");
+                    b.ToTable("Cities", (string)null);
                 });
 
             modelBuilder.Entity("App.School.v3.Entities.Country", b =>
@@ -95,7 +95,7 @@ namespace App.School.v3.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Countrys");
+                    b.ToTable("Countries");
                 });
 
             modelBuilder.Entity("App.School.v3.Entities.DocumentStudent", b =>

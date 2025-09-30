@@ -74,9 +74,9 @@ public class v3DbContext :
     public DbSet<Tutor> Tutors { get; set; }
 
 
-    public DbSet<Country> Countrys => Set<Country>();
+    public DbSet<Country> Countries => Set<Country>();
 
-    public DbSet<City> Citys => Set<City>();
+    public DbSet<City> Cities => Set<City>();
     public DbSet<SchoolData> SchoolsDatas => Set<SchoolData>();
     #endregion
 
@@ -202,6 +202,7 @@ public class v3DbContext :
 
         // State → City
         builder.Entity<City>(x => {
+            x.ToTable("Cities");
         x.HasOne(c => c.State)
             .WithMany(s => s.Cities)
             .HasForeignKey(c => c.IdState)

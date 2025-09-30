@@ -1,10 +1,11 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Events;
+using System;
+using System.Threading.Tasks;
+using Volo.Abp.MultiTenancy;
 
 namespace App.School.v3;
 
@@ -21,6 +22,7 @@ public class Program
         {
             Log.Information("Starting App.School.v3.HttpApi.Host.");
             var builder = WebApplication.CreateBuilder(args);
+         
             builder.Host
                 .AddAppSettingsSecretsJson()
                 .UseAutofac()
@@ -44,6 +46,7 @@ public class Program
             await app.InitializeApplicationAsync();
             await app.RunAsync();
             return 0;
+           
         }
         catch (Exception ex)
         {
