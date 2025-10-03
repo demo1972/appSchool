@@ -8,7 +8,7 @@ using Volo.Abp.Domain.Entities.Auditing;
 
 namespace App.School.v3.Entities
 {
-    public class GroupSchool : AuditedEntity<int>
+    public class GroupSchool : FullAuditedEntity<int>
     {
         public GroupSchool(string name, int gradeId)
         {

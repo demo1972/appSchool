@@ -22,4 +22,10 @@
     <PackageReference Include="Volo.Abp.TenantManagement.Application" Version="9.3.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Groups - Copia %283%29\" />
+    <Folder Include="Groups - Copia %284%29\" />
+    <Folder Include="Groups - Copia %285%29\" />
+  </ItemGroup>
+
 </Project>

@@ -39,6 +39,8 @@ using Volo.Abp.OpenIddict;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.Studio.Client.AspNetCore;
 using Volo.Abp.Security.Claims;
+using App.School.v3.Interfaces;
+using App.School.v3.Repositories;
 
 namespace App.School.v3;
 
@@ -103,7 +105,7 @@ public class v3HttpApiHostModule : AbpModule
             {
                 options.DisableTransportSecurityRequirement = true;
             });
-            
+
             Configure<ForwardedHeadersOptions>(options =>
             {
                 options.ForwardedHeaders = ForwardedHeaders.XForwardedProto;
@@ -118,6 +120,10 @@ public class v3HttpApiHostModule : AbpModule
         ConfigureSwagger(context, configuration);
         ConfigureVirtualFileSystem(context);
         ConfigureCors(context, configuration);
+        context.Services.AddScoped<IGrades, EFCoreGradesRepository>(); 
+        context.Services.AddScoped<IGroups,EFCoreGroupsRepository>();
+        context.Services.AddScoped<IStudent, EFCoreStudentRepository>();
+     
     }
 
     private void ConfigureAuthentication(ServiceConfigurationContext context)

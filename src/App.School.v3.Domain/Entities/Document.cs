@@ -8,7 +8,7 @@ using Volo.Abp.Domain.Entities.Auditing;
 
 namespace App.School.v3.Entities
 {
-    public class DocumentStudent : AuditedEntity<int>
+    public class DocumentStudent : FullAuditedEntity<int>
     {
         public DocumentStudent(string typeDocument, string url, int studentId)
         {

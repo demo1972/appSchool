@@ -8,7 +8,7 @@ using Volo.Abp.Domain.Entities.Auditing;
 
 namespace App.School.v3.Entities
 {
-    public class City :AuditedEntity<int>
+    public class City :FullAuditedEntity<int>
     {
         public City()
         {

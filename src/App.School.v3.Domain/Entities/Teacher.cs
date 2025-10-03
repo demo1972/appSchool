@@ -9,7 +9,7 @@ using Volo.Abp.Domain.Entities.Auditing;
 
 namespace App.School.v3.Entities
 {
-    public class Teacher : AuditedEntity<int>
+    public class Teacher : FullAuditedEntity<int>
     {
         public string CompleteName { get; set; } = string.Empty;
         public List<StudentNote> Notes { get; set; } = new();

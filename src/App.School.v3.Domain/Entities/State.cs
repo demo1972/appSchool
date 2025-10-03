@@ -9,7 +9,7 @@ using Volo.Abp.Domain.Entities.Auditing;
 
 namespace App.School.v3.Entities
 {
-    public class State : AuditedEntity<int>
+    public class State : FullAuditedEntity<int>
     {
         public string Name { get; set; } = string.Empty;
 

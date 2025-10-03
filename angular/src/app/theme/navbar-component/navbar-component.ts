@@ -1,4 +1,4 @@
-import { AuthService } from '@abp/ng.core';
+import { AuthService, ConfigStateService, CurrentUserDto } from '@abp/ng.core';
 import { UserMenuService } from '@abp/ng.theme.shared';
 import { Component } from '@angular/core';
 
@@ -9,11 +9,17 @@ import { Component } from '@angular/core';
   styleUrl: './navbar-component.scss'
 })
 export class NavbarComponent {
-constructor(    protected authService: AuthService, ){
+  userInfo:CurrentUserDto;
+  currentPage='';
+constructor(    protected authService: AuthService,private configState:ConfigStateService){
+
+   this.userInfo = this.configState.getOne("currentUser");
 
 }
+
 logOut(){
   this.authService.logout().subscribe(x=>{
+
     this.authService.navigateToLogin();
   })
 }

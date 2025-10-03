@@ -9,7 +9,7 @@ using Volo.Abp.Domain.Entities.Auditing;
 
 namespace App.School.v3.Entities
 {
-    public class SchoolData : AuditedEntity<int>
+    public class SchoolData : FullAuditedEntity<int>
     {
         public SchoolData(string name, string address, int idCity, string postalCode, string directorName, string phone)
         {
@@ -34,5 +34,7 @@ namespace App.School.v3.Entities
         public string PostalCode { get; set; }
         public string DirectorName { get; set; }
         public string Phone { get; set; }
+        public string Rfc { get; set; }
+
     }
 }

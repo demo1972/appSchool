@@ -48,7 +48,7 @@ export class Login {
 
     const { username, password, rememberMe } = this.loginForm.value;
 
-    const redirectUrl = this.route.snapshot.queryParams.returnUrl || "products"
+    const redirectUrl = this.route.snapshot.queryParams.returnUrl || "/"
 
     this.authService
       .login({ username, password, rememberMe, redirectUrl })

@@ -1,1 +1,25 @@
-<p>toolbar-component works!</p>
+<div class="top-bar d-flex justify-content-between align-items-center p-2 shadow-sm">
+  <!-- Breadcrumb -->
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb mb-0">
+      <li
+        class="breadcrumb-item"
+        *ngFor="let item of breacumbs; let last = last"
+        [class.active]="last || item.active"
+        [attr.aria-current]="last || item.active ? 'page' : null"
+      >
+        <ng-container *ngIf="!(last || item.active)">
+          <a [routerLink]="item.routerLink">{{ item.title }}</a>
+        </ng-container>
+        <ng-container *ngIf="last || item.active">
+          {{ item.title }}
+        </ng-container>
+      </li>
+    </ol>
+  </nav>
+  <!-- Usuario -->
+  <div class="user-info d-flex align-items-center">
+    <i class="bi bi-person-circle fs-4 me-2"></i>
+    <span>{{ userInfo.email }}</span>
+  </div>
+</div>
