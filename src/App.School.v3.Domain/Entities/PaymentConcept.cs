@@ -11,10 +11,12 @@ namespace App.School.v3.Entities
 {
     public class PaymentConcept : FullAuditedEntity<int>
     {
-        public string? Name { get; set; } // Ej: "Colegiatura", "Libros", "Uniformes"
+        public string? Name { get; set; } 
 
         public decimal DefaultAmount { get; set; }
 
-        public bool IsRecurring { get; set; } // true si es mensual
+        public bool IsRecurring { get; set; }
+
+        //Colocar relacion con escuela
     }
 }

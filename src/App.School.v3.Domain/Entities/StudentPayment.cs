@@ -30,6 +30,7 @@ namespace App.School.v3.Entities
 
         public string Notes { get; set; } = string.Empty;
 
+        //Colocar relacion con escuela
         public PaymentStatus Status { get; set; } = PaymentStatus.Paid;
     }
 

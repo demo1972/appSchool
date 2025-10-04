@@ -13,6 +13,7 @@ namespace App.School.v3.Entities
     {
         public string Name { get; set; }   = string.Empty;
 
+        //Colocar relacion con escuela
         public DateTime StartDate { get; set; }
 
         public DateTime EndDate { get; set; }

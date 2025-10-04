@@ -16,6 +16,8 @@ namespace App.School.v3.Entities
         {
         }
 
+
+        //Colocar relacion con escuela,RFC
         public string Name { get; set; } = string.Empty;
         public string MiddleName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
