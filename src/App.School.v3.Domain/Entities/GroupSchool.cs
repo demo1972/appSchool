@@ -31,5 +31,8 @@ namespace App.School.v3.Entities
         public Grade? Grade { get; set; }
 
         public List<Student> Students { get; set; } = new();
+
+        public int SchoolDataId { get; set; }
+        public SchoolData SchoolData { get; set; }
     }
 }

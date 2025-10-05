@@ -22,6 +22,9 @@ namespace App.School.v3.Entities
         }
         public EducationLevel Update(string name) { Name = name; return this; }
 
+        public int SchoolDataId { get; set; }
+        public SchoolData SchoolData { get; set; }
+
 
     }
 }

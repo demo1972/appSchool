@@ -16,5 +16,8 @@ namespace App.School.v3.Entities
 
         public string Phone { get; set; } = string.Empty;
         public List<Student> Students { get; set; } = new List<Student>();
+
+        public int SchoolDataId { get; set; }
+        public SchoolData SchoolData { get; set; }
     }
 }

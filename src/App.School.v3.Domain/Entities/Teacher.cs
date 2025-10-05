@@ -13,5 +13,8 @@ namespace App.School.v3.Entities
     {
         public string CompleteName { get; set; } = string.Empty;
         public List<StudentNote> Notes { get; set; } = new();
+
+        public int SchoolDataId { get; set; }
+        public SchoolData SchoolData { get; set; }
     }
 }

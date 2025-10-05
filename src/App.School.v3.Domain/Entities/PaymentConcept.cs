@@ -1,11 +1,4 @@
-﻿
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Volo.Abp.Domain.Entities.Auditing;
+﻿using Volo.Abp.Domain.Entities.Auditing;
 
 namespace App.School.v3.Entities
 {
@@ -17,6 +10,7 @@ namespace App.School.v3.Entities
 
         public bool IsRecurring { get; set; }
 
-        //Colocar relacion con escuela
+        public int SchoolDataId { get; set; }
+        public SchoolData SchoolData { get; set; }
     }
 }

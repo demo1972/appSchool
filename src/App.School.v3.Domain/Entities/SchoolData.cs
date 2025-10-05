@@ -21,6 +21,8 @@ namespace App.School.v3.Entities
             Phone = phone;
         }
 
+        public SchoolData() { }
+
         public SchoolData Create(string name, string address, int idCity, string postalCode, string directorName, string phone)
         {
           
