@@ -1,6 +1,7 @@
 ﻿using App.School.v3.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Reflection.Metadata;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
@@ -69,7 +70,7 @@ public class v3DbContext :
     public DbSet<SchoolYear> SchoolYears { get; set; }
     public DbSet<Student> Students { get; set; }
     public DbSet<StudentNote> StudentNotes { get; set; }
-    public DbSet<StudentPayment> StudentPayments { get; set; }
+    public DbSet<Payment> StudentPayments { get; set; }
     public DbSet<Teacher> Teachers { get; set; }
     public DbSet<Tutor> Tutors { get; set; }
 
@@ -134,11 +135,23 @@ public class v3DbContext :
 
         // ========== Student -> Tutors (Many-to-Many) ==========
         builder.Entity<Student>()
-            .HasMany(s => s.Tutors)
-            .WithMany(t => t.Students)
-            .UsingEntity(j =>
-                j.ToTable("StudentTutors") // tabla intermedia generada por EF Core
-            );
+    .HasMany(s => s.Tutors)
+    .WithMany(t => t.Students)
+    .UsingEntity<Dictionary<string, object>>(
+        "StudentTutors", 
+
+        j => j
+            .HasOne<Tutor>()
+            .WithMany()
+            .HasForeignKey("TutorsId") 
+            .OnDelete(DeleteBehavior.Restrict), 
+
+        j => j
+            .HasOne<Student>()
+            .WithMany()
+            .HasForeignKey("StudentsId") 
+            .OnDelete(DeleteBehavior.Cascade) 
+    );
 
         // ========== Student -> Documents (One-to-Many) ==========
         builder.Entity<DocumentStudent>()
@@ -148,21 +161,21 @@ public class v3DbContext :
             .OnDelete(DeleteBehavior.Restrict);
 
         // ========== Student -> Payments (One-to-Many) ==========
-        builder.Entity<StudentPayment>()
+        builder.Entity<Payment>()
             .HasOne(p => p.Student)
             .WithMany()
             .HasForeignKey(p => p.StudentId)
             .OnDelete(DeleteBehavior.Restrict);
 
         // ========== Payment -> Concept (Many-to-One) ==========
-        builder.Entity<StudentPayment>()
+        builder.Entity<Payment>()
             .HasOne(p => p.PaymentConcept)
             .WithMany()
             .HasForeignKey(p => p.PaymentConceptId)
             .OnDelete(DeleteBehavior.Restrict);
 
         // ========== Payment -> SchoolYear (Many-to-One) ==========
-        builder.Entity<StudentPayment>()
+        builder.Entity<Payment>()
             .HasOne(p => p.SchoolYear)
             .WithMany(y => y.StudentPayments)
             .HasForeignKey(p => p.SchoolYearId)
@@ -184,33 +197,35 @@ public class v3DbContext :
        .Property(p => p.DefaultAmount)
        .HasPrecision(18, 2);
 
-        builder.Entity<StudentPayment>()
+        builder.Entity<Payment>()
             .Property(p => p.AmountPaid)
             .HasPrecision(18, 2);
 
 
-        builder.Entity<State>(x => {
+        builder.Entity<State>(x =>
+        {
             x.ToTable("States");
             x.HasOne(s => s.Country)
              .WithMany(c => c.States)
             .HasForeignKey(s => s.IdCountry)
             .OnDelete(DeleteBehavior.NoAction);
-            x.Property(p => p.Id).ValueGeneratedOnAdd(); 
+            x.Property(p => p.Id).ValueGeneratedOnAdd();
 
         });
         // Country → State
 
         // State → City
-        builder.Entity<City>(x => {
+        builder.Entity<City>(x =>
+        {
             x.ToTable("Cities");
-        x.HasOne(c => c.State)
-            .WithMany(s => s.Cities)
-            .HasForeignKey(c => c.IdState)
-            .OnDelete(DeleteBehavior.NoAction);
-            x.Property(p=>p.Id).ValueGeneratedOnAdd();
+            x.HasOne(c => c.State)
+                .WithMany(s => s.Cities)
+                .HasForeignKey(c => c.IdState)
+                .OnDelete(DeleteBehavior.NoAction);
+            x.Property(p => p.Id).ValueGeneratedOnAdd();
 
         });
-            
+
 
         // City → School
         builder.Entity<SchoolData>()

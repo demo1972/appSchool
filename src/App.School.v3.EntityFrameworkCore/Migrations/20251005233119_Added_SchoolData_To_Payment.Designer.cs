@@ -4,6 +4,7 @@ using App.School.v3.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -12,9 +13,11 @@ using Volo.Abp.EntityFrameworkCore;
 namespace App.School.v3.Migrations
 {
     [DbContext(typeof(v3DbContext))]
-    partial class v3DbContextModelSnapshot : ModelSnapshot
+    [Migration("20251005233119_Added_SchoolData_To_Payment")]
+    partial class Added_SchoolData_To_Payment
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

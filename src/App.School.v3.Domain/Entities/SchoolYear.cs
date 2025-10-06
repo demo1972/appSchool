@@ -14,7 +14,7 @@ namespace App.School.v3.Entities
 
         public DateTime EndDate { get; set; }
 
-        public List<StudentPayment> StudentPayments { get; set; } = new();
+        public List<Payment> StudentPayments { get; set; } = new();
 
         public int SchoolDataId { get; set; }
         public SchoolData SchoolData { get; set; }
